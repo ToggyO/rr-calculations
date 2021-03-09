@@ -39,8 +39,9 @@ namespace RrNetBack.API
             {
                 options.AddPolicy(MyAllowOrigins,
                     builder => builder
-                        .WithOrigins("http://localhost:63342")
-                        .AllowCredentials()
+                        // .WithOrigins("http://localhost:63342")
+                        // .AllowCredentials()
+                        .AllowAnyOrigin()
                         .AllowAnyHeader()
                         .AllowAnyMethod()
                     );

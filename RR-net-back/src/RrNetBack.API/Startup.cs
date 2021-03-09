@@ -39,12 +39,13 @@ namespace RrNetBack.API
             {
                 options.AddPolicy(MyAllowOrigins,
                     builder => builder
-                        .WithOrigins("http://185.227.108.172")
-                        // .AllowCredentials()
+                        .SetIsOriginAllowed(origin => true)
+                        // .WithOrigins("http://185.227.108.172")
                         // .AllowAnyOrigin()
                         .AllowAnyHeader()
                         .AllowAnyMethod()
-                    );
+                        .AllowCredentials()
+                );
             });
 
             services.Configure<ApiBehaviorOptions>(options => options.SuppressModelStateInvalidFilter = true);
@@ -93,13 +94,13 @@ namespace RrNetBack.API
                 app.UseHttpsRedirection();
             }
 
-            logger.LogInformation("Cors");
-            app.UseCors(MyAllowOrigins);
-            
             logger.LogInformation("Routing");
             app.UseRouting();
             
             logger.LogInformation("Middleware");
+
+            logger.LogInformation("Cors");
+            app.UseCors(MyAllowOrigins);
 
             logger.LogInformation("EnsureMigrationOfContext");
             app.EnsureMigrationContext<ApplicationDbContext>();

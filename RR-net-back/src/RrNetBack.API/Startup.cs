@@ -93,13 +93,13 @@ namespace RrNetBack.API
                 app.UseHttpsRedirection();
             }
 
+            logger.LogInformation("Cors");
+            app.UseCors(MyAllowOrigins);
+            
             logger.LogInformation("Routing");
             app.UseRouting();
             
             logger.LogInformation("Middleware");
-
-            logger.LogInformation("Cors");
-            app.UseCors(MyAllowOrigins);
 
             logger.LogInformation("EnsureMigrationOfContext");
             app.EnsureMigrationContext<ApplicationDbContext>();

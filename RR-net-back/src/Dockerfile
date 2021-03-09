@@ -1,7 +1,7 @@
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /app
 #COPY *.csproj ./
-RUN dotnet restore
+RUN dotnet restore --force ./RrNetBack.sln
 COPY . .
 RUN dotnet publish -c Release -o /app/out
 

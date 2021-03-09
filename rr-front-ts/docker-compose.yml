@@ -1,0 +1,9 @@
+version: '3.5'
+services:
+  rr-calculations-front:
+    container_name: rr-calculations-front
+    hostname: rr-calculations-front
+    build: .
+    restart: always
+    ports:
+      - '80:80'

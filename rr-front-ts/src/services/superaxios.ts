@@ -1,7 +1,7 @@
 import axios from 'axios';
 import type { AxiosRequestConfig } from 'axios';
 
-const API_URL = 'http://localhost:5000/api';
+const API_URL = 'http://185.227.108.172:5000/api';
 
 const superaxios = axios.create({
   baseURL: API_URL,

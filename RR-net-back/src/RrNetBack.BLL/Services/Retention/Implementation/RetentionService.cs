@@ -25,7 +25,7 @@ namespace RrNetBack.BLL.Services.Retention.Implementation
                 ushort count = 0;
                 foreach (var userDto in userDtoList)
                 {
-                    if (date >= userDto.RegistartionDate && date <= userDto.LastActivityDate)
+                    if (date >= userDto.RegistrationDate && date <= userDto.LastActivityDate)
                         count++;
                 }
 

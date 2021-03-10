@@ -40,11 +40,11 @@ namespace RrNetBack.API
                 options.AddPolicy(MyAllowOrigins,
                     builder => builder
                         // .SetIsOriginAllowed(origin => true)
-                        .WithOrigins("http://185.227.108.172")
-                        // .AllowAnyOrigin()
+                        // .WithOrigins("http://185.227.108.172")
+                        .AllowAnyOrigin()
                         .AllowAnyHeader()
                         .AllowAnyMethod()
-                        .AllowCredentials()
+                        // .AllowCredentials()
                 );
             });
 

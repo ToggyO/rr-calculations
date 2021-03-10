@@ -53,7 +53,7 @@ namespace RrNetBack.API.Handlers.Users.Implementation
             {
                 UserModel user = new UserModel
                 {
-                    RegistartionDate = userData.RegistartionDate,
+                    RegistrationDate = userData.RegistrationDate,
                     LastActivityDate = userData.LastActivityDate,
                     CreatedAt = DateTime.Now,
                     UpdatedAt = DateTime.Now,
@@ -75,7 +75,7 @@ namespace RrNetBack.API.Handlers.Users.Implementation
             var usersByLastActivity = await _repository.GetList(GetAllUsersQuery(), true, true);
 
             IEnumerable<UserDTO> userDtos = _mapper.Map<IEnumerable<UserModel>, IEnumerable<UserDTO>>(allUsers.Items);
-            var result = _service.CreateUsersLifetimeInfo(usersByReg.Items.First().RegistartionDate,
+            var result = _service.CreateUsersLifetimeInfo(usersByReg.Items.First().RegistrationDate,
                 usersByLastActivity.Items.First().LastActivityDate, userDtos);
             
             var calculations =  new CalculationDTO

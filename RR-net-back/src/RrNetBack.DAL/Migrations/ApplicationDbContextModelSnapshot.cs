@@ -32,7 +32,7 @@ namespace RrNetBack.DAL.Migrations
                     b.Property<DateTime>("LastActivityDate")
                         .HasColumnType("timestamp without time zone");
 
-                    b.Property<DateTime>("RegistartionDate")
+                    b.Property<DateTime>("RegistrationDate")
                         .HasColumnType("timestamp without time zone");
 
                     b.Property<DateTime>("UpdatedAt")

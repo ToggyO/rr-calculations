@@ -25,7 +25,7 @@ namespace RrNetBack.DAL.Repository.Users.Implementation
                 .Take(model.PageSize);
 
             if (orderByReg != null && orderByReg != false)
-                users = users.OrderBy(x => x.RegistartionDate);
+                users = users.OrderBy(x => x.RegistrationDate);
 
             if (orderByLastActivity != null && orderByLastActivity != false)
                 users = users.OrderByDescending(x => x.LastActivityDate);
@@ -87,7 +87,7 @@ namespace RrNetBack.DAL.Repository.Users.Implementation
         {
             var users = _context.Users
                 .FromSqlInterpolated(
-                    $"SELECT * FROM \"Users\" as u WHERE extract(day from u.\"LastActivityDate\") - extract(day from u.\"RegistartionDate\") >= {upperLimit}")
+                    $"SELECT * FROM \"Users\" as u WHERE extract(day from u.\"LastActivityDate\") - extract(day from u.\"RegistrationDate\") >= {upperLimit}")
                 .ToList();
             return users;
         }

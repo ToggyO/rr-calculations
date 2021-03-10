@@ -32,7 +32,7 @@ namespace RrNetBack.DAL
             modelBuilder.Entity<UserModel>(item =>
             {
                 item.HasKey(c => c.Id);
-                item.Property(c => c.RegistartionDate);
+                item.Property(c => c.RegistrationDate);
                 item.Property(c => c.LastActivityDate);
             });
         }

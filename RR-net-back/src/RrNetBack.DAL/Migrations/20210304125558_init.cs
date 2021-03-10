@@ -14,7 +14,7 @@ namespace RrNetBack.DAL.Migrations
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    RegistartionDate = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
+                    RegistrationDate = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
                     LastActivityDate = table.Column<DateTime>(type: "timestamp without time zone", nullable: false)
                 },
                 constraints: table =>

@@ -9,7 +9,7 @@ namespace RrNetBack.DTO.Users.Validators
     {
         public CreateUserDTOValidator()
         {
-            RuleFor(x => x.RegistartionDate)
+            RuleFor(x => x.RegistrationDate)
                 .NotEmpty().MustBeAValidDate().WithErrorCode(ErrorCodes.Common.FieldInvalid);
             RuleFor(x => x.LastActivityDate)
                 .NotEmpty().MustBeAValidDate().WithErrorCode(ErrorCodes.Common.FieldInvalid);

@@ -24,7 +24,7 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
         "DB_HOST": "localhost",
-        "DB_PORT": "5433",
+        "DB_PORT": "5432",
         "DB_EXTERNAL_PORT": "5432",
         "DB_USER": "RrNetBack@user",
         "DB_PASSWORD": "RrNetBack@pass",

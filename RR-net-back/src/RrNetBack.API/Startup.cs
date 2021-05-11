@@ -9,6 +9,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using RrNetBack.API.Extensions;
 using RrNetBack.API.Filters;
+using RrNetBack.API.Middleware;
 using RrNetBack.BLL.Mappings;
 using RrNetBack.Common.Settings;
 using RrNetBack.DAL;
@@ -104,6 +105,9 @@ namespace RrNetBack.API
 
             logger.LogInformation("EnsureMigrationOfContext");
             app.EnsureMigrationContext<ApplicationDbContext>();
+            
+            logger.LogInformation("Custom middleware");
+            app.UseMiddleware<ExceptionMiddleware>();
 
             logger.LogInformation("Endpoints");
             app.UseEndpoints(endpoints =>
